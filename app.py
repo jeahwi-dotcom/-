@@ -10,7 +10,16 @@ st.subheader("S&P 500 실시간 시장 지표 상황")
 st.caption("외부 라이브러리 충돌을 제거한 초정밀 실시간 연동 시스템")
 st.divider()
 
-# 2. 데이터 호출 및 지표 산출 함수
+# 2. 사이드바: 투자 설정
+st.sidebar.header("💰 나의 투자 설정")
+total_budget = st.sidebar.number_input("총 투자 예산 (KRW)", value=80000000, step=1000000)
+invest_period = st.sidebar.number_input("매수 기간 (일)", value=180, min_value=1)
+base_amount = total_budget / invest_period
+
+st.sidebar.divider()
+st.sidebar.write(f"📍 **일일 기본 매수액:** {base_amount:,.0f}원")
+
+# 3.  데이터 호출 및 지표 산출 함수
 @st.cache_data(ttl=600) # 10분마다 자동 갱신
 def get_safe_metrics():
     try:
