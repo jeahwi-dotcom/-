@@ -14,7 +14,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🚀 은퇴여행자 매수 가이드")
+st.title("🚀 매수 가이드")
 st.caption("실시간 VIX 및 하이퍼 매트릭스 기반")
 
 # --- 데이터 정의 (기존 데이터 유지) ---
@@ -25,8 +25,8 @@ VIX_MATRIX = [(10, 0.02), (12, 0.05), (14, 0.08), (16, 0.12), (18, 0.20), (20, 0
 # 2. 투자 설정 (사이드바로 숨겨서 메인 화면을 심플하게 유지)
 with st.sidebar:
     st.header("⚙️ 설정")
-    total_budget = st.number_input("총 예산 (원)", value=80000000, step=1000000)
-    invest_period = st.number_input("매수 기간 (일)", value=180, min_value=1)
+    total_budget = st.number_input("총 예산 (원)", value=10000000, step=1000000)
+    invest_period = st.number_input("매수 기간 (일)", value=100, min_value=1)
     base_amount = total_budget / invest_period
     st.write(f"일일 기본액: {base_amount:,.0f}원")
 
