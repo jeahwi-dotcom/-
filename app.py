@@ -33,9 +33,9 @@ VIX_MATRIX = [
 st.markdown("### 💰 나의 투자 설정")
 col_input1, col_input2 = st.columns(2)
 with col_input1:
-    total_budget = st.number_input("총 투자 예산 (KRW)", value=80000000, step=1000000)
+    total_budget = st.number_input("총 투자 예산 (KRW)", value=10000000, step=1000000)
 with col_input2:
-    invest_period = st.number_input("매수 기간 (일)", value=180, min_value=1)
+    invest_period = st.number_input("매수 기간 (일)", value=100, min_value=1)
 
 base_amount = total_budget / invest_period
 st.info(f"📍 **일일 기본 매수액:** {base_amount:,.0f}원 (종목별 개별 산출 기준)")
