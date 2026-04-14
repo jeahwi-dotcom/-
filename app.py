@@ -52,9 +52,9 @@ VIX_MATRIX = [(10, 0.02), (12, 0.05), (14, 0.08), (16, 0.12), (18, 0.20), (20, 0
 st.markdown("### 💰 나의 투자 설정")
 col_input1, col_input2 = st.columns(2)
 with col_input1:
-    total_budget = st.number_input("총 투자 예산 (KRW)", value=80000000, step=1000000)
+    total_budget = st.number_input("총 투자 예산 (KRW)", value=10000000, step=1000000)
 with col_input2:
-    invest_period = st.number_input("매수 기간 (일)", value=180, min_value=1)
+    invest_period = st.number_input("매수 기간 (일)", value=100, min_value=1)
 base_amount = total_budget / invest_period
 
 # 3. 실시간 데이터 로드 함수 (기존 유지)
